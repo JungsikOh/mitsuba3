@@ -2,13 +2,17 @@
 
 1. Photon Map
 
-| Result 1 | Result 2 | Result 3 |
-| :---: | :---: | :---: |
-| <img src="scenes/cornell-box/outputs/photon_map_0.png" width="100%"> | <img src="scenes/cornell-box/outputs/photon_map_1.png" width="100%"> | <img src="scenes/water-caustic/outputs/photon_map_2.png" width="100%"> |
 
 | Result 1 | Result 2 | Result 3 |
 | :---: | :---: | :---: |
-| <img src="scenes/cornell-box/outputs/photon_map_0.png" width="100%"> | <img src="scenes/cornell-box/outputs/photon_map_1.png" width="100%"> | <img src="scenes/water-caustic/outputs/photon_map_2.png" width="100%"> |
+| <img src="scenes/cornell-box/outputs/photon_map_0.png" width="100%"> | <img src="scenes/cornell-box/outputs/photon_map_1.png" width="100%"> | <img src="scenes/cornell-box/outputs/photon_map_2.png" width="100%"> |
+
+
+
+| Result 1 | Result 2 | Result 3 |
+| :---: | :---: | :---: |
+| <img src="scenes/water-caustic/outputs/photon_map_0.png" width="100%"> | <img src="scenes/water-caustic/outputs/photon_map_1.png" width="100%"> | <img src="scenes/water-caustic/outputs/photon_map_2.png" width="100%"> |
+
 
 ## About
 
