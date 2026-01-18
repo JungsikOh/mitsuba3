@@ -10,4 +10,7 @@ add_plugin(stokes     stokes.cpp)
 add_plugin(volpath    volpath.cpp)
 add_plugin(volpathmis volpathmis.cpp)
 
+# Added by JungsikOh
+add_plugin(photonmapper photonmapper.cpp)
+
 set(MI_PLUGIN_TARGETS "${MI_PLUGIN_TARGETS}" PARENT_SCOPE)

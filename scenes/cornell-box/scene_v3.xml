@@ -1,0 +1,114 @@
+<scene version="3.0.0">
+    <integrator type="path">
+        <integer name="max_depth" value="5"/>
+    </integrator>
+
+    <sensor type="perspective">
+        <string name="fov_axis" value="smaller"/>
+        <float name="fov" value="39.3077"/>
+        
+        <transform name="to_world">
+            <lookat origin="0, 1, 4" target="0, 1, 0" up="0, 1, 0"/>
+        </transform>
+
+        <sampler type="independent">
+            <integer name="sample_count" value="128"/>
+        </sampler>
+
+        <film type="hdrfilm">
+            <integer name="width" value="512"/>
+            <integer name="height" value="512"/>
+            <string name="pixel_format" value="rgb"/>
+        </film>
+    </sensor>
+
+    <bsdf type="diffuse" id="white">
+        <rgb name="reflectance" value="0.725, 0.71, 0.68"/>
+    </bsdf>
+
+    <bsdf type="diffuse" id="red">
+        <rgb name="reflectance" value="0.63, 0.065, 0.05"/>
+    </bsdf>
+
+    <bsdf type="diffuse" id="green">
+        <rgb name="reflectance" value="0.14, 0.45, 0.091"/>
+    </bsdf>
+    
+    <bsdf type="dielectric" id="glass">
+        <float name="int_ior" value="1.5"/>
+        <float name="ext_ior" value="1.0"/>
+    </bsdf>
+    <bsdf type="conductor" id="mirror">
+        <string name="material" value="Al"/>
+    </bsdf>
+    
+    <shape type="rectangle">
+        <transform name="to_world">
+            <scale x="1" y="1" z="1"/>
+            <rotate x="1" angle="-90"/>
+        </transform>
+        <ref id="white"/>
+    </shape>
+
+    <shape type="rectangle">
+        <transform name="to_world">
+            <scale x="1" y="1" z="1"/>
+            <rotate x="1" angle="90"/>
+            <translate x="0" y="2" z="0"/>
+        </transform>
+        <ref id="white"/>
+    </shape>
+
+    <shape type="rectangle">
+        <transform name="to_world">
+            <scale x="1" y="1" z="1"/>
+            <translate x="0" y="1" z="-1"/>
+        </transform>
+        <ref id="white"/>
+    </shape>
+
+    <shape type="rectangle">
+        <transform name="to_world">
+            <scale x="1" y="1" z="1"/>
+            <rotate y="1" angle="90"/>
+            <translate x="-1" y="1" z="0"/>
+        </transform>
+        <ref id="red"/>
+    </shape>
+
+    <shape type="rectangle">
+        <transform name="to_world">
+            <scale x="1" y="1" z="1"/>
+            <rotate y="1" angle="-90"/>
+            <translate x="1" y="1" z="0"/>
+        </transform>
+        <ref id="green"/>
+    </shape>
+
+    <shape type="rectangle">
+        <transform name="to_world">
+            <scale x="0.2" y="0.2" z="1"/>
+            <rotate x="1" angle="90"/>
+            <translate x="0" y="1.99" z="0"/>
+        </transform>
+        <emitter type="area">
+            <rgb name="radiance" value="20, 20, 20"/>
+        </emitter>
+    </shape>
+
+    <shape type="sphere">
+        <transform name="to_world">
+            <scale value="0.35"/>
+            <translate x="-0.4" y="0.35" z="-0.2"/>
+        </transform>
+        <ref id="glass"/>
+    </shape>
+
+    <shape type="sphere">
+        <transform name="to_world">
+            <scale value="0.35"/>
+            <translate x="0.4" y="0.35" z="0.2"/>
+        </transform>
+        <ref id="mirror"/>
+    </shape>
+</scene>
